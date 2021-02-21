@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
+import { GlobalStylesProvider } from './theme/GlobalStylesProvider';
 
 // import {config} from 'dotenv-safe';
 //
@@ -10,7 +11,9 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GlobalStylesProvider>
+      <App />
+    </GlobalStylesProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
