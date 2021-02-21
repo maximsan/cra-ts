@@ -1,33 +1,65 @@
 {
   "name": "cra-ts",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.2",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
-  },
+  "version": "0.0.0-development",
+  "description": "cra-ts template bootstrapped with CRA app with emotion, CI/CD and deploy to netlify via button",
+  "main": "src/index.jsx",
+  "keywords": [
+    "template",
+    "cra",
+    "typescript",
+    "emotion",
+    "css-in-js",
+    "create-react-app"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom",
+    "test:watch": "yarn test --watchAll",
+    "test:ci": "set CI=true && yarn run test",
+    "test:coverage": "yarn test --coverage",
+    "test:coverage:ci": "set CI=true && yarn test:coverage",
+    "test:coverage:ci:codecov": "yarn test:coverage:ci && codecov",
+    "format": "prettier --write \"src/**/*.+(js|jsx|json|css|scss|md)\"",
+    "lint": "eslint \"src/**/*.+(js|jsx)\"",
+    "lint:fix": "eslint --fix \"src/**/*.+(js|jsx)\"",
+    "clean": "rm -rf node_modules coverage build",
+    "clean:coverage": "rm -rf coverage",
+    "semantic-release": "semantic-release"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "prettier",
+      "prettier/react"
+    ],
+    "plugins": [
+      "react",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "warn",
+        {
+          "endOfLine": "auto"
+        }
+      ],
+      "react/state-in-constructor": 0,
+      "react/jsx-props-no-spreading": "off",
+      "import/prefer-default-export": "off",
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "no-console": "off",
+      "no-use-before-define": 0,
+      "no-param-reassign": 1,
+      "curly": "warn"
+    }
   },
+  "eslintIgnore": [
+    "node_modules",
+    "build/*"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -39,5 +71,67 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!<rootDir>/src/index.tsx",
+      "!<rootDir>/src/reportWebVitals.ts",
+      "!<rootDir>/src/react-app-env.d.ts",
+      "!<rootDir>/src/config.ts",
+      "!<rootDir>/src/shared/**/*.{ts,tsx}"
+    ],
+    "testMatch": [
+      "**/src/**/*.test.+(ts|tsx)"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "functions": 50,
+        "lines": 50,
+        "statements": 50,
+        "branches": 50
+      }
+    }
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/dotenv-safe": "8.1.1",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "dotenv-safe": "8.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.2",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {
+    "codecov": "3.8.1",
+    "eslint": "7.15.0",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-plugin-prettier": "3.2.0",
+    "husky": "4.3.6",
+    "lint-staged": "10.5.4",
+    "prettier": "2.2.1",
+    "semantic-release": "^17.3.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maximsan/cra-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maximsan/cra-ts/issues"
+  },
+  "release": {
+    "branches": "main"
+  },
+  "author": {
+    "name": "Maxim Shchutsky",
+    "email": "maximuzz@yandex.ru"
+  },
+  "license": "MIT"
 }

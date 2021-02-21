@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c364675b-0f09-4399-bd4c-c930e710e26e/deploy-status)](https://app.netlify.com/sites/cra-ts/deploys)
+[![codecov](https://codecov.io/gh/maximsan/cra-ts/branch/main/graph/badge.svg?token=OGFOYAC3VK)](https://codecov.io/gh/maximsan/cra-ts)
+[![Build Status](https://travis-ci.com/maximsan/cra-ts.svg?branch=main)](https://travis-ci.com/maximsan/cra-ts)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/maximsan/cra-ts)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+![GitHub issues](https://img.shields.io/github/issues/maximsan/cra-ts)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Main scripts 📄
 
-## Available Scripts
+```bash
+  "start" - start app
+  "build" - build app
+  "test" - run tests
+  "test:coverage:ci:codecov" - run test and submit codecoverage to codecov
+  "format" - format code with prettier
+  "lint" - check your code with eslint
+  "lint:fix" - fix your code with eslint
+  "cm" - run commitizen to create a good commit
+```
 
-In the project directory, you can run:
+To commit message you have to write following commands
+```bash
+   git add .
+   git commit 
+```
+then follow commitizen prompts and write a good commit
 
-### `yarn start`
+### Main technologies ℹ️
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- react
+- react-app eslint + some additional rules
+- prettier
+- codecov with Travis CI
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Publish with netlify button 🚀
 
-### `yarn test`
+You need to have an account on [netlify](https://www.netlify.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/maximsan/cra-ts#REACT_APP_LOGO=https://live.staticflickr.com/65535/50695950941_526e15d2f1.jpg&REACT_APP_TITLE="React%20app")
 
-### `yarn build`
+If you click this button, it’ll authenticate you in Netlify and you'll have to choose a repository name. <br/>
+Netlify will automatically create a new repo for you that looks exactly like this one. <br/>
+Next, it will build and deploy the new site on Netlify bringing you to the site dashboard when the build is completed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Env variables 📝
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+ - **REACT_APP_LOGO** - here you can pass a link to your app logo
+ - **REACT_APP_TITLE** - here you can pass your app title

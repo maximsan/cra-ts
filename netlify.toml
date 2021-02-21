@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[template.environment]
+  REACT_APP_TITLE = "set your title"
+  REACT_APP_LOGO = "set the url to your logo"
+
