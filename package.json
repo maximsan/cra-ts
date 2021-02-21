@@ -79,7 +79,8 @@
       "!<rootDir>/src/reportWebVitals.ts",
       "!<rootDir>/src/react-app-env.d.ts",
       "!<rootDir>/src/config.ts",
-      "!<rootDir>/src/shared/**/*.{ts,tsx}"
+      "!<rootDir>/src/shared/**/*.{ts,tsx}",
+      "!<rootDir>/src/theme/**/*.{ts,tsx}"
     ],
     "testMatch": [
       "**/src/**/*.test.+(ts|tsx)"

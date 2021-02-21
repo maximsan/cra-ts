@@ -1,7 +1,30 @@
+interface Dictionary<T = string> extends Record<string, T> {}
+
+const createBreakpoints = (breakPoints: Dictionary): Dictionary[] => {
+  const breakPointsArr: Dictionary[] = [];
+  for (let [breakpoint, value] of Object.entries(breakPoints)) {
+    breakPointsArr[breakpoint] = value;
+  }
+
+  return breakPointsArr;
+};
+
+const customBreakpoints = {
+  sm: '30rem',
+  md: '48rem',
+  lg: '62rem',
+  xl: '80rem',
+  xxl: '96rem',
+};
+
+const defaultBreakpoints = [0, '30rem', '48rem', '62rem', '80rem', '96rem'];
+
 export const foundations = {
   fontSizes: [12, 14, 16, 24, 32, 48, 64, 96, 128],
   // margin and padding
-  space: [0, 4, 8, 16, 32, 64, 128, 256],
+  space: [0, '0.125rem', '0.25rem', 8, 16, 32, 64, 128, 256, 512],
+
+  breakpoints: Object.assign(Object.values(defaultBreakpoints), createBreakpoints(customBreakpoints)),
 
   // https://coolors.co/563635-5b6057-6e9075-20462c-81f0e5 - colors pallets generation
   colors: {
